@@ -18,4 +18,7 @@ int main()
 
     // Read data at some offset
     auto data = address.Add(4).As<int*>();
+
+    // Call the address as a function
+    auto returnData = address.Call<int>("abc", 123, (void*)0);
 }

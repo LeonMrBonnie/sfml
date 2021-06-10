@@ -37,5 +37,11 @@ namespace sfml
         {
             return data != nullptr;
         }
+
+        template<typename Return = void, typename... Args>
+        Return Call(Args... args)
+        {
+            return ((Return(*)(Args...))data)(args...);
+        }
     };
 }  // namespace sfml
