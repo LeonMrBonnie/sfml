@@ -1,4 +1,4 @@
-#include "../src/sfml.hpp"
+#include "../include/sfml.hpp"
 #include <Windows.h>
 #include <TlHelp32.h>
 #include <iostream>
