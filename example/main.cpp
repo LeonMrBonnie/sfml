@@ -21,4 +21,10 @@ int main()
 
     // Call the address as a function
     auto returnData = address.Call<int>("abc", 123, (void*)0);
+
+    // Set the address to some value
+    address.Assign<uint32_t>(32);
+
+    // Get the value at the address
+    auto val = address.Value<uint32_t>();
 }

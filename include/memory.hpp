@@ -43,5 +43,17 @@ namespace sfml
         {
             return ((Return(*)(Args...))data)(args...);
         }
+
+        template<typename Type>
+        Type Value()
+        {
+            return (Type)*data;
+        }
+
+        template<typename Type>
+        void Assign(Type value)
+        {
+            *data = value;
+        }
     };
 }  // namespace sfml
