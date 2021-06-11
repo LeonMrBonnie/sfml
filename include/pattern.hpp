@@ -25,7 +25,7 @@ namespace sfml
                 {
                     auto first  = CharToHex(c);
                     auto second = CharToHex(c + 1);
-                    if(first != INVALID_BYTE && second != INVALID_BYTE) bytes.push_back((uint8_t)(((uint8_t*)(first * 0x10)) + second));
+                    if(first != INVALID_BYTE && second != INVALID_BYTE) bytes.push_back(static_cast<uint8_t>((first * 0x10) + second));
                 }
                 else
                 {
