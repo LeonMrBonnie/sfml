@@ -20,11 +20,11 @@ namespace sfml
 #ifdef _WIN32
         explicit Module(HMODULE module) : base((uint8_t*)module)
         {
-            GetModuleSize(base);
+            size = GetModuleSize(base);
         }
         explicit Module(const char* moduleName) : base((uint8_t*)GetModuleHandleA(moduleName))
         {
-            GetModuleSize(base);
+            size = GetModuleSize(base);
         }
 #endif
 
