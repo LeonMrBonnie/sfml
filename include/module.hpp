@@ -20,9 +20,11 @@ namespace sfml
 #ifdef _WIN32
         explicit Module(HMODULE module) : base((uint8_t*)module)
         {
-            auto dos = base.As<IMAGE_DOS_HEADER*>();
-            auto nt  = base.Add(dos->e_lfanew).As<IMAGE_NT_HEADERS*>();
-            size     = nt->OptionalHeader.SizeOfImage;
+            GetModuleSize(base);
+        }
+        explicit Module(const char* moduleName) : base((uint8_t*)GetModuleHandleA(moduleName))
+        {
+            GetModuleSize(base);
         }
 #endif
 

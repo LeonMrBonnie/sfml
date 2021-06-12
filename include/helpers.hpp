@@ -35,4 +35,11 @@ namespace sfml
             default: return INVALID_BYTE;
         }
     }
+
+    static inline uint64_t GetModuleSize(Memory& mem)
+    {
+        auto dos = mem.As<IMAGE_DOS_HEADER*>();
+        auto nt  = mem.Add(dos->e_lfanew).As<IMAGE_NT_HEADERS*>();
+        return nt->OptionalHeader.SizeOfImage;
+    }
 }  // namespace sfml
