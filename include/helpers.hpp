@@ -4,7 +4,7 @@
 
 namespace sfml
 {
-    inline uint8_t INVALID_BYTE = UINT8_MAX;
+    constexpr uint8_t INVALID_BYTE = UINT8_MAX;
 
     // Taken from BigBaseV2
     // https://github.com/huds0nx/BigBaseV3/blob/master/BigBaseV3/src/memory/pattern.cpp
