@@ -9,7 +9,7 @@ namespace sfml
     public:
         Memory(uint8_t* data) : data(data) {}
         explicit Memory(std::nullptr_t data) : data(nullptr) {}
-        explicit Memory(void* data) : data(data) {}
+        explicit Memory(void* data) : data((uint8_t*)data) {}
 
         template<class T>
         Memory Add(T offset)
